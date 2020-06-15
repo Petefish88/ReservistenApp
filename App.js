@@ -29,7 +29,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Start">
-        <Stack.Screen name="Start" component={StartScreen} options={{title: 'Die App der Reserve', headerTitleAlign:'center'}}/>
+        <Stack.Screen name="Start" component={StartScreen} options={{title: 'Die App für Reserve', headerTitleAlign:'center'}}/>
         <Stack.Screen name="Cal" component={CalScreen} options={{title: 'Veranstaltungen', headerTitleAlign:'center'}}/>
         <Stack.Screen name="Bw" component={BwScreen} options={{title: 'Die Reserve',headerTitleAlign:'center'}}/>
         <Stack.Screen name="Boerse" component={BoerseScreen} options={{title: 'Stellenbörse',headerTitleAlign:'center'}}/>
