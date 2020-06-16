@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import { Button, View, Text } from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { WebView} from 'react-native-webview';
-
 export default class CalScreen extends Component {
   render() {
     return (
+      // Webview of the subpage "Veranstaltungen" of www.reservistenverband.de including the removing of unnecessary elements for that certain view
       <WebView
-          source={{ uri: 'https://www.reservistenverband.de/veranstaltungen/?kategorie=&landesid=&search=&distance=' }}
+          source={{ uri: 'https://www.reservistenverband.de/veranstaltungen/?kategorie=&landesid=&search=&distance=' }} 
           ref={c => this._webview = c}
           renderLoading={this.renderLoading}
           startInLoadingState
           javaScriptEnabled={true}
+
+          // Function to first list and than remove the elements
           injectedJavaScript={`
           function removeElementsByClass(className){
             var elements = document.getElementsByClassName(className);

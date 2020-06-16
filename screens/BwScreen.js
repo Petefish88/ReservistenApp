@@ -1,77 +1,74 @@
 import React, { Component } from 'react';
 import 'react-native-gesture-handler';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { ImageBackground, TouchableOpacity, Button, View, Text} from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
-
-
+import { ImageBackground, TouchableOpacity, StyleSheet, View, Text} from 'react-native';
 export default class BwScreen extends Component {
   render() {
     return (
-      
+      /*Screen to provide five links to certain content. Links lead either to an internal webview of a page, an external browser or another screen within the app.
+          Styles are added via stylesheets.*/
       <ImageBackground source={require('../assets/background.jpg')} style={{width: '100%', height: '100%'}}>
       <View style={{flex: 1, flexDirection: 'column',alignItems: 'center', justifyContent:'center'}}>
 
-      <View style={{padding: 10, width: '100%', paddingTop: 200}}>
-        <TouchableOpacity onPress= {() => this.props.navigation.navigate('Link_Aktuelles_BwScreen')}>
-          <View style={{justifyContent:'center', backgroundColor:'rgba(255,255,255, 0.90)',alignItems: 'center', padding: 10}}>
-            
-             <Text style={{textAlign:'center',color:'black', fontSize:22}}>Aktuelles</Text>
-             
-         </View>
-         </TouchableOpacity> 
-        </View>
-
-        <View style={{padding: 10, width: '100%'}}>
-        <TouchableOpacity style={{}} onPress= {() => this.props.navigation.navigate('Link_Menschen_BwScreen')}>
-          <View style={{justifyContent:'center',backgroundColor:'rgba(255,255,255, 0.90)',alignItems: 'center', padding: 10}}>
-            
-            <Text style={{textAlign:'center',color:'black', fontSize:22}}>Menschen</Text>
-            
+        <View style={styles.buttonBorder}>
+          <TouchableOpacity onPress= {() => this.props.navigation.navigate('Link_Aktuelles_BwScreen')}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Aktuelles</Text> 
           </View>
           </TouchableOpacity> 
         </View>
 
-        <View style={{padding: 10, width: '100%'}}>
-        <TouchableOpacity  onPress= {() => this.props.navigation.navigate('Link_Auftrag_BwScreen')}>
-          <View style={{justifyContent:'center', backgroundColor:'rgba(255,255,255, 0.90)',alignItems: 'center', padding: 10}}>
-            
-            <Text style={{textAlign:'center',color:'black', fontSize:22}}>Auftrag</Text>
-           
-          </View>
+        <View style={styles.buttonBorder}>
+          <TouchableOpacity style={{}} onPress= {() => this.props.navigation.navigate('Link_Menschen_BwScreen')}>
+            <View style={styles.button}>            
+              <Text style={styles.buttonText}>Menschen</Text>            
+            </View>
+          </TouchableOpacity> 
+        </View>
+
+        <View style={styles.buttonBorder}>
+          <TouchableOpacity  onPress= {() => this.props.navigation.navigate('Link_Auftrag_BwScreen')}>
+            <View style={styles.button}>            
+              <Text style={styles.buttonText}>Auftrag</Text>           
+            </View>
           </TouchableOpacity>
         </View>
 
-        <View style={{padding: 10, width: '100%'}}>
-        <TouchableOpacity  onPress= {() => this.props.navigation.navigate('Organisation_BwScreen')}>
-          <View style={{justifyContent:'center', backgroundColor:'rgba(255,255,255, 0.90)',alignItems: 'center', padding: 10}}>
-            
-            <Text style={{textAlign:'center',color:'black', fontSize:22}}>Organisation</Text>
-          
-          </View>
+        <View style={styles.buttonBorder}>
+          <TouchableOpacity  onPress= {() => this.props.navigation.navigate('Organisation')}>
+            <View style={styles.button}>            
+              <Text style={styles.buttonText}>Organisation</Text>          
+            </View>
           </TouchableOpacity> 
         </View>  
 
-        <View style={{padding: 10, width: '100%'}}>
-        <TouchableOpacity onPress= {() => this.props.navigation.navigate('Reservist_BwScreen')}>
-          <View style={{justifyContent:'center',backgroundColor:'rgba(255,255,255, 0.90)',alignItems: 'center', padding: 10}}>
-          
-            <Text style={{textAlign:'center',color:'black', fontSize:22}}>Reservist werden</Text>
-            
-          </View>
+        <View style={styles.buttonBorder}>
+          <TouchableOpacity onPress= {() => this.props.navigation.navigate('Reservist_BwScreen')}>
+            <View style={styles.button}>          
+              <Text style={styles.buttonText}>Reservist werden</Text>            
+            </View>
           </TouchableOpacity>
-        </View>
-
-
-
-        <View style={{height:250, justifyContent:'center', alignItems:'center'}}>
-        
-        </View>
+        </View>        
 
       </View>
-      </ImageBackground>
-      
+      </ImageBackground>      
     );
   }
 }
+
+const styles = StyleSheet.create({
+  buttonBorder: {
+    padding: 10,
+    width:'100%',
+  },
+  buttonText: {
+    textAlign: 'center',
+    color: 'black',
+    fontSize: 22,
+  },
+  button: {
+    justifyContent: 'center',
+    backgroundColor: 'rgba(255,255,255, 0.90)',
+    alignItems: 'center',
+    padding: 20,
+  },
+});

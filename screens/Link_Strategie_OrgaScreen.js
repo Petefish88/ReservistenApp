@@ -1,20 +1,17 @@
 import React from 'react';
 import { Component } from 'react';
-import { ImageBackground, SafeAreaView, View, FlatList, StyleSheet, Text } from 'react-native';
-import Constants from 'expo-constants';
-import { Linking, WebBrowser } from 'expo';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import { WebView} from 'react-native-webview';
-
 export default class LinkStrategieOrgaScreen extends Component {
     render() {
         return (
+            // Webview of a subpage of www.bundeswehr.de including the removing of unnecessary elements for that certain view
         <WebView
             source={{uri: 'https://www.bundeswehr.de/de/ueber-die-bundeswehr/die-reserve-der-bundeswehr/organisation-der-reserve-der-bundeswehr/kompetenzzentrum-fuer-reservistenangelegenheiten-der-bundeswehr/strategie-der-reserve'}}
                         ref={c => this._webview = c}
             renderLoading={this.renderLoading}
             startInLoadingState
             javaScriptEnabled={true}
+            // Functions to first list and than remove elements. Lists created by classes, heading and id
             injectedJavaScript={`
             function removeElementsByClass(className){
                 var elements = document.getElementsByClassName(className);

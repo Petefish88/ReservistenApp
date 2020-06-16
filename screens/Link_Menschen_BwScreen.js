@@ -1,23 +1,17 @@
 import React from 'react';
 import { Component } from 'react';
-import { ImageBackground, SafeAreaView, View, FlatList, StyleSheet, Text } from 'react-native';
-import Constants from 'expo-constants';
-import { Linking, WebBrowser } from 'expo';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import { WebView} from 'react-native-webview';
-
-
-
-
 export default class LinkMenschenBwScreen extends Component {
     render() {
         return (
+        // Webview of a subpage of www.bundeswehr-karriere.de including the removing of unnecessary elements for that certain view  
         <WebView
             source={{uri: 'https://www.bundeswehr.de/de/ueber-die-bundeswehr/die-reserve-der-bundeswehr/menschen-in-der-reserve-der-bundeswehr'}}
             ref={c => this._webview = c}
             renderLoading={this.renderLoading}
             startInLoadingState
             javaScriptEnabled={true}
+            // Function to first list and than remove the elements
             injectedJavaScript={`
             function removeElementsByClass(className){
                 var elements = document.getElementsByClassName(className);

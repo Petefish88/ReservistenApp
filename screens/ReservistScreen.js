@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import { ImageBackground, TouchableOpacity, Button, View, Text } from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { WebView} from 'react-native-webview';
-
 export default class ReservistScreen extends Component {
   render() {
     return (
-<WebView
+          // Webview of a subpage of www.bundeswehr-karriere.de including the removing of unnecessary elements for that certain view
+          <WebView
             source={{uri: 'https://www.bundeswehr.de/de/ueber-die-bundeswehr/die-reserve-der-bundeswehr/reservist-werden-in-der-bundeswehr-'}}
             ref={c => this._webview = c}
             renderLoading={this.renderLoading}
             startInLoadingState
             javaScriptEnabled={true}
+            // Functions to first list and than remove elements. Lists created by classes and id
             injectedJavaScript={`
             function removeElementsByClass(className){
                 var elements = document.getElementsByClassName(className);
