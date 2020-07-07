@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
-import { ImageBackground, TouchableOpacity,StyleSheet, View, Text,Image,Linking } from 'react-native';
+import { ImageBackground, TouchableOpacity,StyleSheet, View, Text,Image,Linking, Dimensions } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 export default class OrganisationScreen extends Component {
+  
   render() {
+    
     return (
         /*Screen to provide four links to subpages of the site www.bundeswehr.de. Links lead either to an internal webview of a page or an external browser.
           Styles are added via stylesheets.*/
-        <ImageBackground source={require('../assets/background.jpg')} style={{width: '100%', height: '100%'}}>
-          <View style={{padding:20, flexDirection:'column'}}>
+          
+        
+        
+        <ImageBackground source={require('../assets/background.jpg')} style={{width: "100%", height: "100%"}} imageStyle={{resizeMode:"stretch"}}>
+        <ScrollView>
+          <View style={{ padding: 20, flex: 1, flexDirection: 'column',alignItems: 'center', justifyContent:'center'}}>
 
             <View style={{alignItems: 'center', justifyContent: 'center' }}>
               <Text style={{paddingTop:10,color:'white', fontWeight:'bold', fontSize:22,textAlign:'center'}}>Die Organisation der Reserve</Text>
@@ -26,7 +32,7 @@ export default class OrganisationScreen extends Component {
               <View style={{borderColor:'white', borderWidth:1, justifyContent:'space-evenly', flexDirection: 'row',width:'85%'}}>
                 <TouchableOpacity style={{flexDirection:'row'}} onPress= {() => this.props.navigation.navigate('Link_Reserveangelegenheiten_OrgaScreen')}>
                   <View style={{justifyContent:'center', width:'40%'}}>           
-                    <Image style={{}} source={require('../assets/very_small_joachimruhle2.png')} />           
+                    <Image style={{}} source={require('../assets/very_small_laubenthal.png')} />           
                   </View>
                   <View style={{justifyContent:'center', width:'60%'}}>
                     <Text style={{color:'white'}}>Beauftragter{"\n"}für Reservisten- {"\n"}angelegenheiten</Text>
@@ -60,6 +66,7 @@ export default class OrganisationScreen extends Component {
                 </View>
               </View>
 
+              
               <View style={{paddingTop:10}}>
                 <View style={{borderColor:'white', borderWidth:1,justifyContent:'space-evenly', flexDirection: 'row', width:'85%'}}>
                   <TouchableOpacity style={{flexDirection:'row'}} onPress= {() => { Linking.openURL('https://www.bundeswehr.de/de/ueber-die-bundeswehr/die-reserve-der-bundeswehr/organisation-der-reserve-der-bundeswehr/grundlagen-und-gesetze-fuer-die-reserve-der-bundeswehr')}}>
@@ -72,11 +79,14 @@ export default class OrganisationScreen extends Component {
                   </TouchableOpacity>
                 </View>
               </View>
+              
 
             </View>
       
           </View>
+          </ScrollView>
         </ImageBackground>
+        
      
     );
   }

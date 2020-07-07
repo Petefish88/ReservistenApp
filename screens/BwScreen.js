@@ -7,6 +7,7 @@ export default class BwScreen extends Component {
       /*Screen to provide five links to certain content. Links lead either to an internal webview of a page, an external browser or another screen within the app.
           Styles are added via stylesheets.*/
       <ImageBackground source={require('../assets/background.jpg')} style={{width: '100%', height: '100%'}}>
+      
       <View style={{flex: 1, flexDirection: 'column',alignItems: 'center', justifyContent:'center'}}>
 
         <View style={styles.buttonBorder}>
