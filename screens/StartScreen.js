@@ -30,6 +30,8 @@ export default class StartScreen extends Component {
           </TouchableOpacity>  
 
       </View>
+      <View><Text style={{paddingTop:10,color:'white', fontWeight:'bold', fontSize:12,textAlign:'center'}} onPress= {() => this.props.navigation.navigate('Impressum')}>Impressum</Text></View>
+      <View><Text style={{paddingTop:10,paddingBottom:20,color:'white', fontWeight:'bold', fontSize:12,textAlign:'center'}} onPress= {() => { Linking.openURL('https://www.bundeswehr.de/resource/blob/895346/61c2e917a3cae51686436ced40e5052b/pdf-datenschutzerklaerung-resapp-data.pdf')}}>Datenschutz</Text></View>
       </ImageBackground>
     )
   }

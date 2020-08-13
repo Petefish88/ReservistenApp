@@ -1,17 +1,17 @@
 {
   "expo": {
     "name": "ReservistenApp",
-    "slug": "ReservistenApp",
+    "slug": "expo.io/@devteambwi/ReservistenApp",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
       "ios",
-      "android",
-      "web"
+      "android"
+     
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/AppIcon_BwReserve.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -24,7 +24,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "de.cyberinnovationhub.reservistenapp",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "de.cyberinnovationhub.reservistenapp",
+      "versionCode": 1
     },
     "description": "",
     "githubUrl": "https://github.com/Petefish88/ReservistenApp"

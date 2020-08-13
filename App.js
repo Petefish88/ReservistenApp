@@ -6,7 +6,6 @@ import StartScreen from './screens/StartScreen';
 import CalScreen from './screens/CalScreen';
 import BwScreen from './screens/BwScreen';
 import BoerseScreen from './screens/BoerseScreen';
-
 import OrganisationScreen from './screens/OrganisationScreen';
 import ReservistScreen from './screens/ReservistScreen';
 import LinkAuftragBwScreen from './screens/Link_Auftrag_BwScreen';
@@ -14,6 +13,7 @@ import LinkMenschenBwScreen from './screens/Link_Menschen_BwScreen';
 import LinkAktuellesBwScreen from './screens/Link_Aktuelles_BwScreen';
 import LinkReserveangelegenheitenOrgaScreen from './screens/Link_Reserveangelegenheiten_OrgaScreen';
 import LinkKompetenzzentrumOrgaScreen from './screens/Link_Kompetenzzentrum_OrgaScreen';
+import ImpressumScreen from './screens/ImpressumScreen';
 
 import LinkStrategieOrgaScreen from './screens/Link_Strategie_OrgaScreen';
 import VerbandScreen from './screens/VerbandScreen';
@@ -40,6 +40,7 @@ function App() {
         <Stack.Screen name="Link_Kompetenzzentrum_OrgaScreen" component={LinkKompetenzzentrumOrgaScreen} options={{title: 'Kompetenzzentrum Reserve',headerTitleAlign:'center'}}/>
         <Stack.Screen name="Link_Strategie_OrgaScreen" component={LinkStrategieOrgaScreen} options={{title: 'Strategie der Reserve',headerTitleAlign:'center'}}/>
         <Stack.Screen name="Link_Magazin_VerbandScreen" component={LinkMagazinVerbandScreen} options={{title: 'Magazin - die reserve',headerTitleAlign:'center'}}/>
+        <Stack.Screen name="Impressum" component={ImpressumScreen} options={{title: 'Impressum',headerTitleAlign:'center'}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
