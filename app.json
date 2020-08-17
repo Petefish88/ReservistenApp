@@ -3,6 +3,7 @@
     "name": "ReservistenApp",
     "slug": "ReservistenApp",
     "privacy": "public",
+    "sdkVersion": "38.0.0",
     "platforms": [
       "ios",
       "android"
