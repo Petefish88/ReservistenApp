@@ -18,6 +18,21 @@ export default class StartScreen extends Component {
             <Image style={styles.iconcom} source={require('../assets/iconcommunity.png')} />
             <Text style={styles.buttonText}>Bw Community</Text>
           </TouchableOpacity>
+
+if (Platform.OS === 'ios') {
+  //iOS-Link
+
+          <TouchableOpacity style={styles.button} onPress= {() => { Linking.openURL('https://apps.apple.com/de/app/cyber-mission-befehlsrecht/id1459881586')}}>
+            <Image style={styles.iconcom} source={require('../assets/iconbefehlsrecht.png')} />
+            <Text style={styles.buttonText}>Cyber Mission - Befehlsrecht</Text>
+          </TouchableOpacity>
+} else { 
+  //Android-Link
+          <TouchableOpacity style={styles.button} onPress= {() => { Linking.openURL('https://play.google.com/store/apps/details?id=com.cyberinnovationhubbw.cybermission.befr&hl=de')}}>
+          <Image style={styles.iconcom} source={require('../assets/iconbefehlsrecht.png')} />
+          <Text style={styles.buttonText}>Cyber Mission - Befehlsrecht</Text>
+          </TouchableOpacity>
+}
         
           <TouchableOpacity style={styles.button} onPress= {() => this.props.navigation.navigate('Boerse')}>
             <Image style={styles.icon} source={require('../assets/iconboerse.png')} />
